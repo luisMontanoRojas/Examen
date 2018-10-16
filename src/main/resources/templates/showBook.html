@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <b>Id:</b><span th:text="${book.id}"></span><br/>
+    <b>Titulo:</b><span th:text="${book.title}"></span><br/>
+    <b>Categoria:</b><span th:text="${book.bookCategory.name}"></span><br/>
+    <b>Autor:</b><span th:text="${book.author.name}"></span><br/>
+    <b>Like:</b><span th:text="${book.likes}"></span><br/>
+
+</body>
+</html>

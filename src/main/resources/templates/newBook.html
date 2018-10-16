@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/book" th:object="${book}"  method="POST" >
+    <b>Texto:</b><input type="text" th:field="*{title}">
+    <br>
+    <b>Likes:</b><input type="text" th:field="*{likes}">
+    <span style="color: red" th:text="${errorLikes != '' ? errorLikes : ''}" ></span>
+    <br>
+    <b>Categoria:</b>
+    <select th:field="*{bookCategory}">
+        <option th:each="bookCategory: ${bookCategories}" th:value="${bookCategory.id}"  th:text="${bookCategory.name}"></option>
+    </select>
+    <br>
+    <b>Mostrar:</b><input type="text" th:field="*{mostrar}">
+    <span style="color: red" th:text="${errorMostrar != '' ? errorMostrar : ''}" ></span>
+<br/>
+    <b>Autor:</b>
+    <select th:field="*{author}">
+        <option th:each="author: ${authors}" th:value="${author.id}"  th:text="${author.name}"></option>
+    </select>
+<br/>
+
+    <input type="submit" value="Guardar">
+</form>
+</body>
+</html>
